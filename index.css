@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #111;
+    color: #fff;
+}
+#avatar {
+    margin: auto;
+    border-radius: 400px;
+    width: 150px;
+}
+#container,
+#intro,
+#projects,
+#projects-inner,
+#playlists,
+#photos {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px 40px;
+    max-width: 1200px;
+}
+
+#container {
+    padding: 0;
+}
+
+#intro {
+    text-align: justify;
+}
+
+#projects-inner,
+#playlists-inner,
+#photos-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.repo-card,
+.playlist-card,
+.photo-card {
+    margin: 20px;
+    width: 300px;
+}
+
+.repo-card > div {
+    background: #222 !important;
+}
+.repo-card > div > div {
+    color: white !important;
+}
+.repo-card a {
+    color: #2f90ff !important;
+}
+.repo-card svg {
+    fill: #777 !important;
+}
+.repo-card > div {
+    border: 2px solid #333 !important;
+}
+
+.playlist-card img,
+.photo-card img {
+    width: 100%;
+}
+
+.photo-card {
+    width: 300px;
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+h1 {
+    font-size: 40px;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#intro a {
+    padding-bottom: 5px;
+    color: #ffc800;
+    border-bottom: 2px solid #ffc800;
+    padding-bottom: 2px;
+}
+
+.github,
+.github:active,
+.github:hover {
+    color: #2f90ff;
+    border-bottom: 2px solid #2f90ff;
+}
+.spotify,
+.spotify:active,
+.spotify:hover {
+    color: #1db954;
+    border-bottom: 2px solid #1db954;
+}
+
+.instagram,
+.instagram:active,
+.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    display: inline-block;
+
+    border-bottom: none;
+    position: relative;
+}
+.instagram::after {
+    content: "";
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    display: block;
+    margin-top: 5px;
+    height: 2px;
+}
+
+@media only screen and (max-width: 600px) {
+    #container,
+    #intro,
+    #projects,
+    #projects-inner,
+    #playlists,
+    #photos {
+        padding: 0 20px;
+    }
+}
