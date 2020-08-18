@@ -1,182 +1,325 @@
 <html>
+    <head>
+        <title>Kevin Schaich</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Kevin Schaich" />
+        <meta name="keywords" content="Kevin,Schaich,Kevin Schaich,Kevinschaich,Palantir" />
+        <meta name="author" content="Kevin Schaich" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <title>Kevin Schaich</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="Kevin Schaich">
-    <meta name="keywords" content="Kevin,Schaich,Kevin Schaich,Kevinschaich,Palantir">
-    <meta name="author" content="Kevin Schaich">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
+        <script>
+            (function () {
+                new InstagramFeed({
+                    username: "instagram",
+                    container: document.getElementById("photos-inner"),
+                    display_profile: true,
+                    display_biography: true,
+                    display_gallery: true,
+                    callback: null,
+                    styling: true,
+                    items: 8,
+                    items_per_row: 3,
+                    margin: 1,
+                    lazy_load: true,
+                    on_error: console.error,
+                });
+            })();
+        </script>
+        <style>
+            body {
+                display: flex;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+                    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                background-color: #111;
+                color: #fff;
+            }
+            #avatar {
+                margin: auto;
+                border-radius: 400px;
+                width: 150px;
+            }
+            #container,
+            #intro,
+            #projects,
+            #projects-inner,
+            #playlists,
+            #photos {
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                padding: 20px 40px;
+                max-width: 1200px;
+            }
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124166431-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+            #container {
+                padding: 0;
+            }
 
-        gtag('config', 'UA-124166431-1');
-    </script>
+            #intro {
+                text-align: justify;
+            }
 
-    <link href="https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro:400,700" rel="stylesheet">
+            #projects-inner,
+            #playlists-inner,
+            #photos-inner {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
 
-    <style>
-        body,
-        html {
-            color: #394B59;
-            font-family: "Source Sans Pro";
-            font-weight: 400;
-        }
+            .repo-card,
+            .playlist-card,
+            .photo-card {
+                margin: 20px;
+                width: 300px;
+            }
 
-        body,
-        html,
-        div,
-        span,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p {
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
+            .repo-card > div {
+                background: #222 !important;
+            }
+            .repo-card > div > div {
+                color: white !important;
+            }
+            .repo-card a {
+                color: #2f90ff !important;
+            }
+            .repo-card svg {
+                fill: #777 !important;
+            }
+            .repo-card > div {
+                border: 2px solid #333 !important;
+            }
 
-        .width-container {
-            max-width: 800px;
-            margin: 0px auto;
-        }
+            .playlist-card img,
+            .photo-card img {
+                width: 100%;
+            }
 
-        .header-content {
-            background-color: #394B59;
-            color: white;
-            padding: 0 1.5rem;
-        }
+            .photo-card {
+                width: 300px;
+                height: 300px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
 
-        .header-content h1 {
-            display: inline-block;
-            font-size: 2.5rem;
-            line-height: 5rem;
-            font-weight: 800;
-            cursor: hand;
-        }
+            h1,
+            h2 {
+                text-align: center;
+            }
+            h1 {
+                font-size: 40px;
+            }
+            h2 {
+                font-size: 20px;
+                font-weight: 600;
+            }
+            p {
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 30px;
+            }
 
-        .header-content h1 .name-reveal {
-            max-width: 0px;
-            opacity: 0;
-            display: inline-block;
-            transition: all 125ms ease;
-        }
+            a {
+                text-decoration: none;
+            }
 
-        .header-content h1:hover .name-reveal {
-            max-width: 600px;
-            opacity: 1;
-            transition: all 250ms ease;
-        }
+            #intro a {
+                padding-bottom: 5px;
+                color: #ffc800;
+                border-bottom: 2px solid #ffc800;
+                padding-bottom: 2px;
+            }
 
-        .body-content {
-            padding: 1.5rem;
-        }
+            .github,
+            .github:active,
+            .github:hover {
+                color: #2f90ff;
+                border-bottom: 2px solid #2f90ff;
+            }
+            .spotify,
+            .spotify:active,
+            .spotify:hover {
+                color: #1db954;
+                border-bottom: 2px solid #1db954;
+            }
 
-        .body-content h1 {
-            font-family: "Merriweather";
-            font-weight: 100;
-            padding-top: 2rem;
-            font-size: 3rem;
-        }
+            .instagram,
+            .instagram:active,
+            .instagram:hover {
+                background: radial-gradient(
+                    circle at 30% 107%,
+                    #fdf497 0%,
+                    #fdf497 5%,
+                    #fd5949 45%,
+                    #d6249f 60%,
+                    #285aeb 90%
+                );
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
 
-        .body-content p {
-            text-align: justify;
-            font-size: 1.25rem;
-            line-height: 2.5rem;
-        }
+                display: inline-block;
 
-        .body-content h1,
-        .body-content p {
-            padding-bottom: 1.5rem;
-        }
+                border-bottom: none;
+                position: relative;
+            }
+            .instagram::after {
+                content: "";
+                background: radial-gradient(
+                    circle at 30% 107%,
+                    #fdf497 0%,
+                    #fdf497 5%,
+                    #fd5949 45%,
+                    #d6249f 60%,
+                    #285aeb 90%
+                );
+                display: block;
+                margin-top: 5px;
+                height: 2px;
+            }
+        </style>
+    </head>
 
-        .body-content a,
-        .body-content a:visited,
-        .body-content a:active,
-        .body-content a:hover {
-            text-decoration: none;
-            padding-bottom: 0.25rem;
-            box-shadow: 0 1px 0 0 #394B59;
-            color: #394B59;
-        }
+    <body>
+        <div id="container">
+            <div id="intro">
+                <h1>👋&nbsp&nbspHi, I'm Kevin.</h1>
+                <img id="avatar" src="./img/avatar.jpg" alt="" />
+                <p class="unchanged rich-diff-level-one">
+                    I've spent the last 3 years solving awesome problems at
+                    <a target="_blank" href="https://palantir.com" rel="nofollow">Palantir</a>, working with clients in
+                    the fianancial services, automotive manufacturing, national defense, and oil &amp; gas industries.
+                    In my free time I build open-source software, most notably
+                    <a target="_blank" href="https://github.com/kevinschaich/mintable">Mintable</a>, a free tool which
+                    allows developers everywhere to manage &amp; automate their personal finances.
+                </p>
+                <p class="unchanged rich-diff-level-one">
+                    I grew up in the suburbs of Pittsburgh, Pennsylvania dabbling in everything from action sports to
+                    musical instruments to
+                    <a target="_blank" href="https://instagram.com/kevinschaich" rel="nofollow">landscape</a> and
+                    <a target="_blank" href="https://instagram.com/skyline.patrol" rel="nofollow">city</a> photography.
+                    I studied CS at Cornell and spent some time as an intern at
+                    <a target="_blank" href="https://workday.com" rel="nofollow">Workday</a> in 2015 and
+                    <a target="_blank" href="https://shopkick.com" rel="nofollow">Shopkick</a> in 2016. These days, I
+                    fill the weekends with skiing/snowboarding during the cold months and road trips/hiking during the
+                    warm months.
+                </p>
+                <p class="unchanged rich-diff-level-one">
+                    Talk to me about
+                    <a target="_blank" href="https://instagram.com/kevinschaich" rel="nofollow">photography</a> /
+                    <a target="_blank" href="https://instagram.com/kevinschaich" rel="nofollow">cameras</a> / gadgets,
+                    <a target="_blank" href="https://github.com/kevinschaich/mintable">personal finance</a>, coffee,
+                    cars (&amp; Top Gear), The Office, and my dog
+                    <a target="_blank" href="https://kevinschaich.io/rusty.jpg" rel="nofollow">Rusty</a>.
+                </p>
+            </div>
 
-        .body-content a:hover {
-            opacity: 0.5;
-            transition: opacity 250ms;
-        }
+            <div id="projects">
+                <h1>Projects</h1>
+                <h2>
+                    View more on <a class="github" href="https://github.com/kevinschaich">@kevinschaich on GitHub</a>.
+                </h2>
+                <div id="projects-inner">
+                    <div class="repo-card" data-repo="kevinschaich/mintable"></div>
+                    <div class="repo-card" data-repo="kevinschaich/pyspark-cheatsheet"></div>
+                    <div class="repo-card" data-repo="kevinschaich/dog-friendly-national-parks"></div>
+                    <div class="repo-card" data-repo="kevinschaich/billboard"></div>
+                    <div class="repo-card" data-repo="kevinschaich/dotfiles"></div>
+                    <div class="repo-card" data-repo="kevinschaich/kevinschaich.github.io"></div>
+                </div>
+            </div>
 
-        .body-content .img-container {
-            padding-top: 2rem;
-            text-align: center;
-        }
+            <div id="playlists">
+                <h1>Playlists</h1>
+                <h2>
+                    View more on
+                    <a class="spotify" href="https://open.spotify.com/user/kevinschaich">@kevinschaich on Spotify</a>.
+                </h2>
+                <div id="playlists-inner">
+                    <div class="playlist-card">
+                        <a
+                            target="_blank"
+                            href="https://open.spotify.com/playlist/4LuO3ABJh50ZMFSW0D1t6o?si=-8NWBszXRguQIYMmvYQX8Q"
+                            ><img src="./img/Lush.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="playlist-card">
+                        <a
+                            target="_blank"
+                            href="https://open.spotify.com/playlist/3vXY8DBRcSUwcF4Tv1iIAb?si=hyChd00tRoujELtQXFnzHQ"
+                            ><img src="./img/Highly Flammable.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="playlist-card">
+                        <a
+                            target="_blank"
+                            href="https://open.spotify.com/playlist/1f0YU37AZua6Ojq9d0LMR8?si=v9p-gxJaRDC8miRwHfv6zw"
+                            ><img src="./img/Booze Cruise.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="playlist-card">
+                        <a
+                            target="_blank"
+                            href="https://open.spotify.com/playlist/5KYN4gbdNKqNNBrPRXKxyf?si=t1KpjmlRQ02PmVnNqyoYKw"
+                            ><img src="./img/Weekend Rotation.jpg" alt=""
+                        /></a>
+                    </div>
+                    <div class="playlist-card">
+                        <a
+                            target="_blank"
+                            href="https://open.spotify.com/playlist/5d5m0nwbaLZ2K6Hn8OPKfI?si=qqAyVcsqSw64t8Mr73Meww"
+                            ><img src="./img/Cerebral.jpg" alt=""
+                        /></a>
+                    </div>
+                </div>
+            </div>
 
-        .body-content .img-container img {
-            height: 250px;
-            border-radius: 250px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="header-content">
-        <div class="width-container">
-            <h1>K<span class="name-reveal">evin&nbsp;</span>S<span class="name-reveal">chaich</span></h1>
-        </div>
-    </div>
-    <div class="body-content">
-        <div class="width-container">
-            <h1>Solving Hard Problems</h1>
-            <p>
-                I'm a forward-deployed engineer at <a target="_blank" href="https://palantir.com">Palantir</a>. Right now
-                I'm working with one of the world's largest auto manufacturers to build reliable, high quality vehicles.
-                Before that I spent a year working with a global oil supermajor to overhaul monitoring of well integrity,
-                keeping people and the environment safe.
-            </p>
-            <p>
-                Prior to Palantir, I interned as an infrastructure engineer at <a target="_blank" href="https://workday.com">Workday</a>
-                and a backend engineer at <a target="_blank" href="https://shopkick.com">Shopkick</a>. I studied computer
-                science at Cornell University.
-            </p>
-            <p>
-                I'm on <a target="_blank" href="https://linkedin.com/in/kevinschaich">LinkedIn</a>, <a target="_blank" href="https://github.com/kevinschaich">GitHub</a>
-                & <a target="_blank" href="https://instagram.com/kevinschaich">Instagram</a>.
-            </p>
-            <p>
-                <a target="_blank" href="https://kevinschaich.io/mintable">Mintable</a>,
-                <a target="_blank" href="https://github.com/kevinschaich/dog-friendly-national-parks">Dog-Friendly National Parks</a>,
-                <a target="_blank" href="https://kevinschaich.io/billboard">Billboard</a>, <a target="_blank" href="https://kevinschaich.io/debt">Debt</a>,
-                and <a target="_blank" href="http://cornell.photo">cornell.photo</a> are some of my side projects.
-            </p>
-            <h1>Backstory</h1>
-            <p>
-                I grew up in the suburbs of Western Pennsylvania near Pittsburgh. As a kid my favorite things to do were anything action
-                sports, including (very badly) BMXing, paintballing, skiing, dirtbiking, and boating. More recently, I've
-                moved to San Francisco, California and taken up photography, snowboarding and cars, and when I'm at home
-                I try to golf with my dad (double digits are a good day).
-            </p>
-            <p>
-                My favorite TV show is Top Gear – I've seen every episode in all 22 seasons (while it was still on BBC). I've also watched
-                The Office more times than I can count. I've recently adopted a 4-year-old Golden Retriever named <a
-                    target="_blank" href="rusty.jpg">Rusty</a> and would be thrilled to talk about him and our 
-                <a target="_blank" href="https://github.com/kevinschaich/dog-friendly-national-parks">adventures</a> at great lengths.
-            </p>
-            <p>
-                I've never left North America except for an 8-day ring-road trip around Iceland. I'm hoping to change that very soon. My
-                last name is German, you say it "shike" (rhymes with bike).
-            </p>
-            <div class="img-container">
-                <img src="avatar.jpg" />
+            <div id="photos">
+                <h1>Photos</h1>
+                <h2>
+                    View more on
+                    <a class="instagram" target="_blank" href="https://instagram.com/kevinschaich"
+                        >@kevinschaich on Instagram</a
+                    >.
+                </h2>
+                <div id="photos-inner">
+                    <a target="_blank" href="https://www.instagram.com/p/0qE8SGGZfL/"
+                        ><div class="photo-card" style="background-image: url('./img/1.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/-USkVvmZX1/"
+                        ><div class="photo-card" style="background-image: url('./img/2.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/6THGY4mZeU/"
+                        ><div class="photo-card" style="background-image: url('./img/3.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/CAN15OgD0jL/"
+                        ><div class="photo-card" style="background-image: url('./img/8.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/6LjXQDGZRh/"
+                        ><div class="photo-card" style="background-image: url('./img/4.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/CD17Tt3D81Q/"
+                        ><div class="photo-card" style="background-image: url('./img/5.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/CDo2VJqjKHG/"
+                        ><div class="photo-card" style="background-image: url('./img/6.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/CATsZQSDDAD/"
+                        ><div class="photo-card" style="background-image: url('./img/7.jpg');"></div
+                    ></a>
+                    <a target="_blank" href="https://www.instagram.com/p/CDSFzFwDYbY/"
+                        ><div class="photo-card" style="background-image: url('./img/9.jpg');"></div
+                    ></a>
+                </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
